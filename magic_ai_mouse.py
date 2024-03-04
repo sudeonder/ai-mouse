@@ -1,5 +1,6 @@
 import cv2
 import mediapipe as mp
+import pyautogui
 
 # capture video from camera
 cap = cv2.VideoCapture(1)
@@ -26,6 +27,7 @@ while True:
                 print(x, y)
                 if id == 8:
                     cv2.circle(img=frame, center=(x, y), radius=10, color=(255, 255, 51), thickness=-1)
+                    pyautogui.moveTo(x, y)
                 
 
     cv2.imshow('Frame', frame)
